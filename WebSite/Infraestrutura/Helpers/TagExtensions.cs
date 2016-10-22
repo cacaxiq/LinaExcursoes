@@ -16,5 +16,14 @@ namespace WebSite.Infraestrutura.Helpers
 
             return new MvcHtmlString(String.Format("<{0}>{1}</{0}>", parametro.TagHTML, parametro.Conteudo));
         }
+
+        public static string CustomContent(int id)
+        {
+            var repositorio = new ParametrosRepositorio();
+
+            var parametro = repositorio.GetById(id);
+
+            return parametro.Conteudo;
+        }
     }
 }

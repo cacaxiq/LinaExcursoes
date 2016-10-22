@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace WebSite.Infraestrutura.DataBase.Contexto.Repositorio
 {
@@ -13,6 +14,7 @@ namespace WebSite.Infraestrutura.DataBase.Contexto.Repositorio
 
         public void Add(TEntity obj)
         {
+            obj.DataInclusao = DateTime.Now;
             Db.Set<TEntity>().Add(obj);
             Db.SaveChanges();
         }
@@ -28,6 +30,11 @@ namespace WebSite.Infraestrutura.DataBase.Contexto.Repositorio
         public void Dispose()
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<TEntity> FindBy(Expression<Func<TEntity, bool>> predicate)
+        {
+            return Db.Set<TEntity>().Where(predicate).ToList();
         }
 
         public IEnumerable<TEntity> GetAll()
@@ -58,6 +65,7 @@ namespace WebSite.Infraestrutura.DataBase.Contexto.Repositorio
 
         public void Update(TEntity obj)
         {
+            obj.DataInclusao = DateTime.Now;
             Db.Entry(obj).State = EntityState.Modified;
             Db.SaveChanges();
         }

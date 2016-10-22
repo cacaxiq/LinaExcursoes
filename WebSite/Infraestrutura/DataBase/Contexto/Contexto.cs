@@ -21,5 +21,7 @@ namespace WebSite.Infraestrutura.DataBase.Contexto
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Viagens> Viagens { get; set; }
     }
 }
