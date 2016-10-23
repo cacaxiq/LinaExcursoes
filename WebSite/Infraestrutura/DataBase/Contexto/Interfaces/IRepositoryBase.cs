@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using WebSite.Infraestrutura.DataBase.Contexto.Tables;
 
 namespace WebSite.Infraestrutura.DataBase.Contexto.Interfaces
 {
@@ -19,7 +18,12 @@ namespace WebSite.Infraestrutura.DataBase.Contexto.Interfaces
 
         void Update(TEntity obj);
 
+        void UpdateList(IEnumerable<TEntity> objList);
+
         void Remove(TEntity obj);
+
+        void RemoveList(IEnumerable<TEntity> objList);
+
 
         void Dispose();
     }

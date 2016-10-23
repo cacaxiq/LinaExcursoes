@@ -1,4 +1,6 @@
-﻿
+﻿@using WebSite_LinaExcursao.Infraestrutura.Session
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,9 +31,17 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">
-                    <img alt="LinaExcursoes"  src="~/img/logo_texto.png" />
+                    <img alt="LinaExcursoes" src="~/img/logo_texto.png" />
                 </a>
             </div>
+            @if (GerenciaSession.Usuario != null)
+            {
+            <div class="navbar-right">
+                <p class="navbar-text">Olá @Html.Raw(GerenciaSession.Usuario.Nome)</p>
+                @Html.ActionLink("Home", "Admin", "Home", null, new { @class = "btn btn-success navbar-btn" })
+                @Html.ActionLink("Deslogar", "Deslogar", "Login", null, new { @class = "btn btn-success navbar-btn" })
+            </div>
+            }
         </div>
     </nav>
     <div class="container-fluid">

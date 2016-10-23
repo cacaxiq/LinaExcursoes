@@ -295,6 +295,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -304,29 +306,40 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\CarouselController.cs" />
+    <Compile Include="Controllers\ContatosController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ParametrosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\ViagensController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infraestrutura\DataBase\Contexto\Contexto.cs" />
+    <Compile Include="Infraestrutura\DataBase\Contexto\Interfaces\IUsuariosRepositorio.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Interfaces\IViagensRepositorio.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Interfaces\IParametrosRepositorio.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Interfaces\IRepositoryBase.cs" />
+    <Compile Include="Infraestrutura\DataBase\Contexto\Repositorio\UsuariosRepositorio.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Repositorio\ViagensRepositorio.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Repositorio\ParametrosRepositorio.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Repositorio\RepositoryBase.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Tables\Parametros.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Tables\TabelaBase.cs" />
+    <Compile Include="Infraestrutura\DataBase\Contexto\Tables\Usuarios.cs" />
     <Compile Include="Infraestrutura\DataBase\Contexto\Tables\Viagens.cs" />
     <Compile Include="Infraestrutura\Enumerators\TipoDestino.cs" />
     <Compile Include="Infraestrutura\Helpers\EnumExtension.cs" />
     <Compile Include="Infraestrutura\Helpers\TagExtensions.cs" />
     <Compile Include="Infraestrutura\Mail\Mail.cs" />
+    <Compile Include="Infraestrutura\Session\GerenciaSession.cs" />
+    <Compile Include="Infraestrutura\Session\GerenciaSessionBase.cs" />
     <Compile Include="Infraestrutura\Validators\ValidateFileAttribute.cs" />
+    <Compile Include="Infraestrutura\Validators\ValidateSignAttribute.cs" />
+    <Compile Include="Models\CauroselViewModel.cs" />
+    <Compile Include="Models\ContatoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -352,6 +365,21 @@
     <Content Include="Views\Viagens\ListarViagensPorTipo.cshtml" />
     <Content Include="Views\File\FileUpload.cshtml" />
     <Content Include="Views\Shared\Admin_Layout.cshtml" />
+    <Content Include="Views\Contatos\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Login\Logar.cshtml" />
+    <Content Include="Views\Login\CriarLogin.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Carousel\Create.cshtml" />
+    <Content Include="Views\Carousel\Index.cshtml" />
+    <Content Include="Views\Carousel\Edit.cshtml" />
+    <Content Include="Views\Carousel\Delete.cshtml" />
+    <Content Include="Views\Carousel\Details.cshtml" />
+    <Content Include="Views\Carousel\Montacarousel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -363,8 +391,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="img\Viagens\" />
     <Folder Include="Infraestrutura\Json\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

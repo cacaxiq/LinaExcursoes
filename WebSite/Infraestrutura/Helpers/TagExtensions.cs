@@ -25,5 +25,19 @@ namespace WebSite.Infraestrutura.Helpers
 
             return parametro.Conteudo;
         }
+
+        public static string CustomContentPorNome(string nomeParametro)
+        {
+            var repositorio = new ParametrosRepositorio();
+
+            var parametro = repositorio.ObterPorNomeParametro(nomeParametro);
+
+            if(parametro != null)
+            {
+                return parametro.Conteudo;
+            }
+
+            return string.Empty;
+        }
     }
 }

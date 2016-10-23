@@ -6,9 +6,11 @@ using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
 using WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables;
 using WebSite_LinaExcursao.Infraestrutura.Enumerators;
 using WebSite_LinaExcursao.Infraestrutura.Helpers;
+using WebSite_LinaExcursao.Infraestrutura.Validators;
 
 namespace WebSite_LinaExcursao.Controllers
 {
+    [ValidateSign]
     public class ViagensController : Controller
     {
         private IViagensRepositorio viagem;
@@ -18,6 +20,7 @@ namespace WebSite_LinaExcursao.Controllers
             viagem = _viagem;
         }
 
+        
         public ActionResult Index()
         {
             return View(viagem.GetAll());
@@ -25,6 +28,7 @@ namespace WebSite_LinaExcursao.Controllers
 
 
         // GET: Viagens
+        [AllowAnonymous]
         public ActionResult ListarViagensPorTipo(string tipoDestino)
         {
             return View(viagem.FindBy(p => p.Tipo == tipoDestino));

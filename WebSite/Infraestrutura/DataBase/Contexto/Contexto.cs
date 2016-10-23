@@ -16,12 +16,14 @@ namespace WebSite.Infraestrutura.DataBase.Contexto
 
         public DbSet<Parametros> Parametros { get; set; }
 
+        public System.Data.Entity.DbSet<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Viagens> Viagens { get; set; }
+
+        public System.Data.Entity.DbSet<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Usuarios> Usuarios { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
         }
-
-        public System.Data.Entity.DbSet<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Viagens> Viagens { get; set; }
     }
 }

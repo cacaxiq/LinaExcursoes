@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using WebSite_LinaExcursao.Infraestrutura.Validators;
 
 namespace WebSite_LinaExcursao.Controllers
 {
+    [ValidateSign]
     public class FileController : Controller
     {
         public ActionResult FileUpload()

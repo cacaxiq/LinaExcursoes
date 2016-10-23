@@ -41,6 +41,7 @@ namespace WebSite.App_Start
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IParametrosRepositorio, ParametrosRepositorio>();
             container.RegisterType<IViagensRepositorio, ViagensRepositorio>();
+            container.RegisterType<IUsuariosRepositorio, UsuariosRepositorio>();
         }
     }
 }

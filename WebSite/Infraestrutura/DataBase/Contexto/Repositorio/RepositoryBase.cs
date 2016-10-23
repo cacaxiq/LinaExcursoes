@@ -1,10 +1,10 @@
-﻿using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
-using WebSite.Infraestrutura.DataBase.Contexto.Tables;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
+using WebSite.Infraestrutura.DataBase.Contexto.Tables;
 
 namespace WebSite.Infraestrutura.DataBase.Contexto.Repositorio
 {
@@ -63,11 +63,27 @@ namespace WebSite.Infraestrutura.DataBase.Contexto.Repositorio
             }
         }
 
+        public void RemoveList(IEnumerable<TEntity> objList)
+        {
+            foreach (var obj in objList)
+            {
+                this.Remove(obj);
+            }
+        }
+
         public void Update(TEntity obj)
         {
             obj.DataInclusao = DateTime.Now;
             Db.Entry(obj).State = EntityState.Modified;
             Db.SaveChanges();
+        }
+
+        public void UpdateList(IEnumerable<TEntity> objList)
+        {
+            foreach (var obj in objList)
+            {
+                this.Update(obj);
+            }
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<ul class="list-group">
+    <li class="list-group-item">
+        @Html.ActionLink("Viagens", "Index", "Viagens", null, new { @class = "btn btn-success" })
+    </li>
+    <li class="list-group-item">
+        @Html.ActionLink("Parametros", "Index", "Parametros", null, new { @class = "btn btn-success" })
+    </li>
+</ul>

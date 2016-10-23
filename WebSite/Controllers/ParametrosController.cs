@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
+﻿using System.Net;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto;
 using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
 using WebSite.Infraestrutura.DataBase.Contexto.Tables;
+using WebSite_LinaExcursao.Infraestrutura.Validators;
 
 namespace WebSite.Controllers
 {
+    [ValidateSign]
     public class ParametrosController : Controller
     {
         private IParametrosRepositorio parametro;
