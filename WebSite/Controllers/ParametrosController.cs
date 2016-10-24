@@ -19,7 +19,7 @@ namespace WebSite.Controllers
         // GET: Parametros
         public ActionResult Index()
         {
-            return View(parametro.GetAll());
+            return View(parametro.FindBy(p => !p.TagHTML.Contains("Carousel")));
         }
 
         // GET: Parametros/Details/5
@@ -48,7 +48,7 @@ namespace WebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Conteudo,TagHTML,DataInclusao")] Parametros parametros)
+        public ActionResult Create([Bind(Include = "Id,Conteudo,TagHTML,NomeParametro")] Parametros parametros)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace WebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Conteudo,TagHTML,DataInclusao")] Parametros parametros)
+        public ActionResult Edit([Bind(Include = "Id,Conteudo,TagHTML,NomeParametro")] Parametros parametros)
         {
             if (ModelState.IsValid)
             {

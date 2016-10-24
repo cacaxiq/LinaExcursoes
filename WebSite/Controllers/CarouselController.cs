@@ -47,6 +47,11 @@ namespace WebSite.Controllers
         // GET: Carousel/Create
         public ActionResult Create()
         {
+            var model = new CauroselViewModel
+            {
+                NomeCarousel = "Carousel_"
+            };
+
             return View();
         }
 
@@ -151,7 +156,7 @@ namespace WebSite.Controllers
         {
             var model = new List<CauroselViewModel>();
 
-            var parametroList = parametro.FindBy(p => p.TagHTML.Contains("Caurosel_"));
+            var parametroList = parametro.FindBy(p => p.TagHTML.Contains("Carousel_"));
 
             var dictParametros = parametroList.GroupBy(p => p.TagHTML).ToDictionary(x => x.Key, x => x.ToList());
 

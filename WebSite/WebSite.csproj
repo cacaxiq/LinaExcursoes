@@ -273,6 +273,7 @@
     <Content Include="Content\font-awesome\scss\_screen-reader.scss" />
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\linaexcursoes.com.br - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="img\copacabana.jpg" />
     <Content Include="img\logo_texto.png" />
@@ -282,6 +283,11 @@
     <Content Include="img\portfolio\game.png" />
     <Content Include="img\portfolio\safe.png" />
     <Content Include="img\portfolio\submarine.png" />
+    <Content Include="img\Viagens\cabin.png" />
+    <Content Include="img\Viagens\copacabana.jpg" />
+    <Content Include="img\Viagens\game.png" />
+    <Content Include="img\Viagens\logo_texto.png" />
+    <Content Include="img\Viagens\testeImagem.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\freelancer.min.js" />
@@ -336,6 +342,7 @@
     <Compile Include="Infraestrutura\Mail\Mail.cs" />
     <Compile Include="Infraestrutura\Session\GerenciaSession.cs" />
     <Compile Include="Infraestrutura\Session\GerenciaSessionBase.cs" />
+    <Compile Include="Infraestrutura\Validators\ValidateCarouselAttribute.cs" />
     <Compile Include="Infraestrutura\Validators\ValidateFileAttribute.cs" />
     <Compile Include="Infraestrutura\Validators\ValidateSignAttribute.cs" />
     <Compile Include="Models\CauroselViewModel.cs" />
@@ -389,7 +396,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\Viagens\" />
     <Folder Include="Infraestrutura\Json\" />
   </ItemGroup>
   <ItemGroup>
