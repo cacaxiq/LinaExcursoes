@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: 
+Disallow: /Infraestrutura
+Disallow: /Controllers
+Disallow: /App_Start
+Disallow: /Scripts

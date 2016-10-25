@@ -17,7 +17,7 @@ namespace WebSite.Infraestrutura.Mail
                                 "sandboxde0b4e64c37440a9bd426a1b9a1ea280.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", "Mailgun Sandbox <postmaster@sandboxde0b4e64c37440a9bd426a1b9a1ea280.mailgun.org>");
-            request.AddParameter("to", "Lina Paula <linapaulac@gmail.com>");
+            request.AddParameter("to", "Lina Paula <contato@linaexcursoes.com.br>");
             request.AddParameter("subject", "Mensagem - Fale Conosco Lina Excursão");
             request.AddParameter("text", mensagem);
             request.Method = Method.POST;

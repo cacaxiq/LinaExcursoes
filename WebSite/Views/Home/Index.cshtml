@@ -5,44 +5,8 @@
     Layout = "~/Views/Shared/Main_Layout.cshtml";
 }
 
-<!-- Navigation -->
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="#page-top"><img src="~/img/logo_texto.png" /></a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li class="page-scroll">
-                    <a href="#portfolio">Viagens</a>
-                </li>
-                <li class="page-scroll">
-                    <a href="#about">Sobre Nós</a>
-                </li>
-                <li class="page-scroll">
-                    <a href="#contact">Contato</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
 <!-- Header -->
-<div id="carousel-example-generic" data-pause="false" class="carousel slide" data-interval="2000" data-ride="carousel" style="margin-top: 110px">
-    <!-- Indicators -->
-
-
-        @{ Html.RenderAction("Montacarousel", "Carousel");}
-</div>
+@{ Html.RenderAction("Montacarousel", "Carousel");}
 
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
@@ -61,7 +25,7 @@
                             <h3>Praias</h3>
                         </div>
                     </div>
-                    <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                    <img src="img/portfolio/cabin.png" class="img-responsive" alt="Lina Excursões - A melhor viagem para seu momento.">
                 </a>
             </div>
             <div class="col-sm-6 portfolio-item">
@@ -71,7 +35,7 @@
                             <h3>Cidades</h3>
                         </div>
                     </div>
-                    <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                    <img src="img/portfolio/cake.png" class="img-responsive" alt="Lina Excursões - A melhor viagem para seu momento.">
                 </a>
             </div>
             <div class="col-sm-6 portfolio-item">
@@ -81,7 +45,7 @@
                             <h3>Parque Aquático</h3>
                         </div>
                     </div>
-                    <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                    <img src="img/portfolio/circus.png" class="img-responsive" alt="Lina Excursões - A melhor viagem para seu momento.">
                 </a>
             </div>
             <div class="col-sm-6 portfolio-item">
@@ -91,12 +55,13 @@
                             <h3>EcoTurismo</h3>
                         </div>
                     </div>
-                    <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                    <img src="img/portfolio/game.png" class="img-responsive" alt="Lina Excursões - A melhor viagem para seu momento.">
                 </a>
             </div>
         </div>
     </div>
 </section>
+
 <!-- About Section -->
 <section class="success" id="about">
     <div class="container">
@@ -120,57 +85,10 @@
         </div>
     </div>
 </section>
+
 <!-- Contact Section -->
 @{Html.RenderAction("Index", "Contatos"); }
-<!-- Footer -->
-<footer class="text-center">
-    <div class="footer-above">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col col-md-4">
-                    <h3>Localização</h3>
-                    <p>
-                        Barreiro
-                        <br>Belo Horizote, MInas Gerais
-                    </p>
-                </div>
-                <div class="footer-col col-md-4">
-                    <h3>Redes Sociais</h3>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col col-md-4">
-                    <h3>SobrE a guia</h3>
-                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-below">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    Copyright &copy; Guia Excursão 2016
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-    <a class="btn btn-primary" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
-</div>
+
 <!-- Portfolio Modals -->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
@@ -186,11 +104,9 @@
                     <div class="modal-body">
                         <h2>Praias</h2>
                         <hr class="star-primary">
-
                         @{
                             Html.RenderAction("ListarViagensPorTipo", "Viagens", new { tipoDestino = "Praias" });
                         }
-
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                     </div>
                 </div>
@@ -276,6 +192,3 @@
         </div>
     </div>
 </div>
-
-
-

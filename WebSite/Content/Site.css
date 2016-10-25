@@ -13,10 +13,14 @@
         object-fit: contain;
     }
 
-.navbar-custom{
-    padding:5px 0;
+.navbar-custom {
+    padding: 5px 0;
 }
 
 .label-success {
     background-color: #2c9d9f;
+}
+
+.modal-backdrop{
+    display: none;
 }

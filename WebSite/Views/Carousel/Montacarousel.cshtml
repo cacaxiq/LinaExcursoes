@@ -3,43 +3,44 @@
 @{
     Layout = null;
 }
+<div id="carousel-example-generic" data-pause="false" class="carousel slide" data-interval="2000" data-ride="carousel" style="margin-top: 110px">
 
-<ol class="carousel-indicators">
-    <li data-target='#carousel-example-generic' data-slide-to='0'></li>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target='#carousel-example-generic' data-slide-to='0'></li>
+        @for (int i = 1; i < Model.Count(); i++)
+        {
+            <li data-target="#carousel-example-generic" data-slide-to="@i"></li>
+        }
+    </ol>
 
-    @for (int i = 1; i < Model.Count(); i++)
-    {
-        <li data-target="#carousel-example-generic" data-slide-to="@i"></li>
-    }
-</ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
 
-<!-- Wrapper for slides -->
-<div class="carousel-inner" role="listbox">
-
-    @foreach (var item in Model)
-    {
-        var imagem = string.Format("<img src='img/Viagens/{0}' class='img-responsive' />", item.Imagem);
-
-
-        <div class="item active">
-            @Html.Raw(imagem)
-            <div class="carousel-caption">
-                <h3>@item.Titulo</h3>
-                <p>@item.SubTitulo</p>
+        @foreach (var item in Model)
+        {
+            var imagem = string.Format("<img src='img/Viagens/{0}' alt='Lina Excursões - A melhor viagem para seu momento.' class='img-responsive' />", item.Imagem);
+            <div class="item active">
+                @Html.Raw(imagem)
+                <div class="carousel-caption">
+                    <h3>@item.Titulo</h3>
+                    <p>@item.SubTitulo</p>
+                </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 
-<!-- Controls -->
-<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-</a>
-<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-</a>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+</div>
 
 <script>
     $('document').ready(function () {
@@ -49,11 +50,7 @@
             if (controle != 0) {
                 $(this).removeClass("active");
             }
-
             controle++;
         });
-
-
     });
-
 </script>
