@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using WebSite.Infraestrutura.DataBase.Contexto.Tables;
+using WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables;
 
 namespace WebSite.Infraestrutura.DataBase.Contexto
 {
@@ -16,9 +17,9 @@ namespace WebSite.Infraestrutura.DataBase.Contexto
 
         public DbSet<Parametros> Parametros { get; set; }
 
-        public System.Data.Entity.DbSet<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Viagens> Viagens { get; set; }
+        public DbSet<Viagens> Viagens { get; set; }
 
-        public System.Data.Entity.DbSet<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Usuarios> Usuarios { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

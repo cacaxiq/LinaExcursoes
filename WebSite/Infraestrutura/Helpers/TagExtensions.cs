@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Web;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
 using WebSite.Infraestrutura.DataBase.Contexto.Repositorio;
 
 namespace WebSite.Infraestrutura.Helpers
