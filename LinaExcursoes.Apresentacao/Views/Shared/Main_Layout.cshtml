@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html lang="pt-br" role="main">
 <head>
@@ -10,25 +10,16 @@
     <link rel="shortcut icon" href="~/lina.ico" type="image/x-icon">
     <link rel="icon" href="~/lina.ico" type="image/x-icon">
     <title>Lina Excursões - O portal mineiro para viagens e excursões, com os melhores preços de Minas Gerais</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <!-- Theme CSS -->
-    <link href="~/Content/freelancer.min.css" rel="stylesheet" />
-    <!-- Custom Fonts -->
-    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bunbles/fontsMontserrat")
+    @Styles.Render("~/bunbles/fontsLato")
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        @Scripts.Render("~/bunbles/cdnHTML5")
+        @Scripts.Render("~/bunbles/CDNrespond")
     <![endif]-->
-
-    <link href="~/Content/Site.css" rel="stylesheet" />
-
-    <!-- jQuery -->
-    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
 </head>
 <body id="page-top" class="index">
 
@@ -47,11 +38,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (!(ViewBag.Home??false))
                     {
-                        <li class="page-scroll">
-                            <a class="nav-padding" href="~/">Ínicio</a>
-                        </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="~/">Ínicio</a>
+                    </li>
                     }
-                    
+
                     <li class="page-scroll">
                         <a class="nav-padding" href="~/Praias">Praias</a>
                     </li>
@@ -67,12 +58,12 @@
 
                     @if (ViewBag.Home??false)
                     {
-                        <li class="page-scroll">
-                            <a class="nav-padding" href="#about">Sobre Nós</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a class="nav-padding" href="#contact">Contato</a>
-                        </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="#about">Sobre Nós</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="#contact">Contato</a>
+                    </li>
                     }
                 </ul>
             </div>
@@ -142,17 +133,24 @@
         </a>
     </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <!-- Contact Form JavaScript -->
-    <script src="~/Scripts/jqBootstrapValidation.js"></script>
-    <!-- Theme JavaScript -->
-    <script src="~/Scripts/freelancer.min.js"></script>
-    <!-- Ajax -->
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <!-- JavaScript -->
+    @Scripts.Render("~/bundles/javascript")
+    @Scripts.Render("~/bundles/googleAnalytics")
+    @Scripts.Render("~/bundles/cdnJqueryEasy")
 
-    <script src="~/Scripts/GoogleAnalytics.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        $(function () {
+            var element = $(".item.active");
+            var controle = 0;
+            element.each(function () {
+                if (controle != 0) {
+                    $(this).removeClass("active");
+                }
+                controle++;
+            });
+        });
+    </script>
 </body>
 </html>
