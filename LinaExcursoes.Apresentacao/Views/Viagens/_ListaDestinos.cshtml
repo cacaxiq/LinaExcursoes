@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Viagens>
+
+@foreach (var item in Model)
+{
+
+    <div class="row" style="margin-bottom: 30px;">
+        <div class="col-md-7">
+            <a href="#">
+                @{
+                    var imagem = string.Empty;
+                    if (!string.IsNullOrEmpty(item.Imagem))
+                    {
+                        imagem = string.Format("<img class='img-responsive' src='img/Viagens/{0}' alt='Lina Excursões - A melhor viagem para seu momento.' />", item.Imagem);
+                    }
+                }
+                @Html.Raw(imagem)
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3><span class="label label-default">@Html.DisplayFor(modelItem => item.Local)</span></h3>
+            <h4><span class="label label-success">@Html.DisplayFor(modelItem => item.Periodo)</span></h4>
+            <h4>@Html.DisplayFor(modelItem => item.DataSaida) a @Html.DisplayFor(modelItem => item.DataRetorno)</h4>
+
+            <p>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </p>
+            <h4>@Html.DisplayFor(modelItem => item.Valor)</h4>
+        </div>
+    </div>
+                    }

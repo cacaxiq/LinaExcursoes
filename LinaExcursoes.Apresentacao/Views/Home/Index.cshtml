@@ -1,0 +1,91 @@
+﻿@using WebSite.Infraestrutura.Helpers;
+
+
+@{
+    Layout = "~/Views/Shared/Main_Layout.cshtml";
+    
+}
+
+<!-- Header -->
+@{ Html.RenderAction("Montacarousel", "Carousel");}
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Viagens</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 portfolio-item">
+                <a href="~/Praias" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <h3>Praias</h3>
+                        </div>
+                    </div>
+                    @TagExtensions.CustomImgTag("ImagemPraia")
+                </a>
+            </div>
+            <div class="col-sm-6 portfolio-item">
+                <a href="~/Cidades" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <h3>Cidades</h3>
+                        </div>
+                    </div>
+                    @TagExtensions.CustomImgTag("ImagemCidade")
+                </a>
+            </div>
+            <div class="col-sm-6 portfolio-item">
+                <a href="~/Parques" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <h3>Parque Aquático</h3>
+                        </div>
+                    </div>
+                    @TagExtensions.CustomImgTag("ImagemParqueAquatico")
+                </a>
+            </div>
+            <div class="col-sm-6 portfolio-item">
+                <a href="~/EcoTurismo" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <h3>EcoTurismo</h3>
+                        </div>
+                    </div>
+                    @TagExtensions.CustomImgTag("ImagemEcoTurismo")
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="success" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Sobre Nós</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <p>@TagExtensions.CustomTag(3)</p>
+            </div>
+            <div class="col-lg-4">
+                <p>@TagExtensions.CustomTag(4)</p>
+
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+@{Html.RenderAction("Index", "Contatos"); }

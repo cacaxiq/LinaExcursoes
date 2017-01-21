@@ -1,0 +1,158 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-br" role="main">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="O portal Lina Excursões oferece diversas opções de excursões e viagens, que se encaixam no seu bolso. Através de parcerias com guias de viagem de Belo Horizonte e região temos diversas opções de destinos, que oferecem ao cliente a oportunidade de encontrar a melhor viagem para seu momento.">
+    <meta name="author" content="carloshrgabriel.com.br">
+    <link rel="shortcut icon" href="~/lina.ico" type="image/x-icon">
+    <link rel="icon" href="~/lina.ico" type="image/x-icon">
+    <title>Lina Excursões - O portal mineiro para viagens e excursões, com os melhores preços de Minas Gerais</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Theme CSS -->
+    <link href="~/Content/freelancer.min.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+</head>
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand no-padding" href="#page-top"><img src="~/img/logo_texto.png" alt="Lina Excursões - A melhor viagem para seu momento." /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    @if (!(ViewBag.Home??false))
+                    {
+                        <li class="page-scroll">
+                            <a class="nav-padding" href="~/">Ínicio</a>
+                        </li>
+                    }
+                    
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="~/Praias">Praias</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="~/Cidades">Cidades</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="~/Parques">Parques</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="~/EcoTurismo">Eco Turismo</a>
+                    </li>
+
+                    @if (ViewBag.Home??false)
+                    {
+                        <li class="page-scroll">
+                            <a class="nav-padding" href="#about">Sobre Nós</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a class="nav-padding" href="#contact">Contato</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    @RenderBody()
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h4>Localização</h4>
+                        <p>
+                            Barreiro
+                            <br>Belo Horizote, MInas Gerais
+                        </p>
+                        <p>+55 31 987569962</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h4>Redes Sociais</h4>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/Lina-Excurs%C3%B5es-1595925810723532/" alt="Lina excursões" target="_blank" class="btn btn-social btn-outline">
+                                    <i class="fa fa-fw fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/LinaExcursoes?lang=pt-br" target="_blank" alt="Lina excursões" class="btn btn-social btn-outline">
+                                    <i class="fa fa-fw fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/linaexcursoes/?hl=pt-br" target="_blank" alt="Lina excursões" class="btn btn-social btn-outline">
+                                    <i class="fa fa-fw fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h4>SobrE a guia</h4>
+                        <p>contato@linaexcursoes.com.br</p>
+                        <p>No portal Lina Excursões encontre uma oportunidade de encontrar a melhor viagem para seu momento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Guia Excursão 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="~/Scripts/jqBootstrapValidation.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="~/Scripts/freelancer.min.js"></script>
+    <!-- Ajax -->
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script src="~/Scripts/GoogleAnalytics.js"></script>
+</body>
+</html>

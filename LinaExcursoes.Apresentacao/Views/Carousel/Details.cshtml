@@ -1,0 +1,40 @@
+﻿@model WebSite.Models.CauroselViewModel
+
+@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<div>
+    <h4>CauroselViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTitulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTitulo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { nomeCaurosel = Model.NomeCarousel }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
