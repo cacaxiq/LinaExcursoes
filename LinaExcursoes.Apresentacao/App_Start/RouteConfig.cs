@@ -44,6 +44,12 @@ defaults: new { controller = "Viagens", action = "Praias" }
 );
 
             routes.MapRoute(
+    name: "PaginaInicial",
+    url: "Home",
+    defaults: new { controller = "Home", action = "Index" }
+);
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
