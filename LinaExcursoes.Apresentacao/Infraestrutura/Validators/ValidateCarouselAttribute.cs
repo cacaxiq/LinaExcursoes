@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebSite_LinaExcursao.Infraestrutura.Validators
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Validators
 {
 
     public class ValidateCarouselAttribute : ValidationAttribute

@@ -1,15 +1,17 @@
-﻿using System;
+﻿using LinaExcursoes.Apresentacao.Infraestrutura.Validators;
+using LinaExcursoes.Dominio.Interfaces;
+using LinaExcursoes.Dominio.Tables;
+using LinExcursoes.Apresentacao.Models;
+using LinExcursoes.Infraestrutura.Extensions;
+using System;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
-using WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables;
-using WebSite_LinaExcursao.Infraestrutura.Enumerators;
-using WebSite_LinaExcursao.Infraestrutura.Helpers;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
 
-namespace WebSite_LinaExcursao.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     [ValidateSign]
     public class ViagensController : Controller
@@ -21,7 +23,7 @@ namespace WebSite_LinaExcursao.Controllers
             viagem = _viagem;
         }
 
-        
+
         public ActionResult Index()
         {
             return View(viagem.GetAll());
@@ -37,30 +39,52 @@ namespace WebSite_LinaExcursao.Controllers
 
         // GET: Viagens
         [AllowAnonymous]
+        public ActionResult Detalhe(int id)
+        {
+            var model = new ViagensporDetalhe();
+
+            try
+            {
+                var retorno = viagem.ObterDetalheViagem(id);
+
+                model.Detalhe = retorno.Detalhe;
+                model.ListaViagem = retorno.ListaViagem;
+            }
+            catch (Exception)
+            {
+
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            return View(model);
+        }
+
+        // GET: Viagens
+        [AllowAnonymous]
         public ActionResult Praias()
         {
-            return View(viagem.FindBy(p => p.Tipo == "Praias" && p.DataSaida >= DateTime.Now).OrderBy(p => p.DataSaida));
+            return View(viagem.ObterProximasViagensPraias());
         }
 
         // GET: Viagens
         [AllowAnonymous]
         public ActionResult Cidades()
         {
-            return View(viagem.FindBy(p => p.Tipo == "Cidades" && p.DataSaida >= DateTime.Now).OrderBy(p => p.DataSaida));
+            return View(viagem.ObterProximasViagensCidades());
         }
 
         // GET: Viagens
         [AllowAnonymous]
         public ActionResult Parques()
         {
-            return View(viagem.FindBy(p => p.Tipo == "ParquesAquaticos" && p.DataSaida >= DateTime.Now).OrderBy(p => p.DataSaida));
+            return View(viagem.ObterProximasViagensParques());
         }
 
         // GET: Viagens
         [AllowAnonymous]
         public ActionResult EcoTurismo()
         {
-            return View(viagem.FindBy(p => p.Tipo == "Ecoturismo" && p.DataSaida >= DateTime.Now).OrderBy(p => p.DataSaida));
+            return View(viagem.ObterProximasViagensEcoturismo());
         }
 
         // GET: Viagens/Details/5
@@ -153,9 +177,38 @@ namespace WebSite_LinaExcursao.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Viagens viagens = viagem.GetById(id);
-            viagem.Remove(viagens);
+            viagem.Remove(id);
             return RedirectToAction("Index");
+        }
+
+        [AllowAnonymous]
+        public JsonResult AutoCompletePesquisa(string termo)
+        {
+            var lista = viagem.ConsultarViagens();
+
+            var termoNormalizado = termo.Normalizacao();
+
+            var link = string.Format(ConfigurationManager.AppSettings["caminhoBase"], "Detalhe");
+
+            var listaFiltrada = lista.Where(p => p.Normalizacao().Contains(termoNormalizado));
+
+            var listaExibicao = listaFiltrada.Select(item => new
+            {
+                link = string.Format("{0}/{1}", link, item.Split('&')[1]),
+                descricao = item.Split('&')[0]
+            }).ToList();
+
+            return Json(listaExibicao, JsonRequestBehavior.AllowGet);
+        }
+
+        [AllowAnonymous]
+        public ActionResult DetalhesPesquisa(string pesquisar)
+        {
+            var lista = viagem.ObterViagensPorPesquisa(pesquisar);
+
+            ViewBag.Termo = pesquisar;
+
+            return View(lista);
         }
     }
 }

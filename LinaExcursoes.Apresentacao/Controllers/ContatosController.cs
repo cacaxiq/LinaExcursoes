@@ -1,10 +1,11 @@
 ﻿using System.Text;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.Mail;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
-using WebSite_LinaExcursao.Models;
+using LinaExcursoes.Apresentacao.Infraestrutura.Mail;
+using LinaExcursoes.Dominio.Interfaces;
+using LinaExcursoes.Dominio.Tables;
+using LinaExcursoes.Apresentacao.Models;
 
-namespace WebSite_LinaExcursao.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     public class ContatosController : Controller
     {

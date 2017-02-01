@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LinaExcursoes.Apresentacao.Infraestrutura.Validators;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
+using System.Configuration;
 
-namespace WebSite.Models
+namespace LinaExcursoes.Apresentacao.Models
 {
     public class CauroselViewModel
     {
@@ -13,10 +10,12 @@ namespace WebSite.Models
         [ValidateCarousel(ErrorMessage = "O nome do carousel deve começar com 'Carousel'")]
         public string NomeCarousel { get; set; }
 
+
+        private string _imagem;
+        [MaxLength(20, ErrorMessage = "Excedeu tamanho permitido(20).")]
         [Required(ErrorMessage = "Campo deve ser preenchido.")]
-        public string Imagem { get; set; }
 
-
+        public string Imagem { get { return _imagem; } set { _imagem = string.Format(ConfigurationManager.AppSettings["caminhoImagens"], value); } }
         public string Titulo { get; set; }
 
         public string SubTitulo { get; set; }

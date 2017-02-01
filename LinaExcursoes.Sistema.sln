@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinaExcursoes.Apresentacao"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinaExcursoes.Infraestrutura", "LinaExcursoes.Infraestrutura\LinaExcursoes.Infraestrutura.csproj", "{26B718E4-2F1F-43D1-B07D-46CED0934A0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinaExcursoes.ServiceApi", "LinaExcursoes.ServiceApi\LinaExcursoes.ServiceApi.csproj", "{DBA70BDB-FF16-4A90-A96E-4C3336B2F541}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinaExcursoes.Administrativo", "LinaExcursoes.Administrativo\LinaExcursoes.Administrativo.csproj", "{DF58F6DA-099D-4C2C-93EF-0242D15900D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinaExcursoes.Api", "LinaExcursoes.Api\LinaExcursoes.Api.csproj", "{8E94D04A-E5A2-4EFD-BEFB-F6EF724DCABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +31,14 @@ Global
 		{26B718E4-2F1F-43D1-B07D-46CED0934A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26B718E4-2F1F-43D1-B07D-46CED0934A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26B718E4-2F1F-43D1-B07D-46CED0934A0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBA70BDB-FF16-4A90-A96E-4C3336B2F541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBA70BDB-FF16-4A90-A96E-4C3336B2F541}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBA70BDB-FF16-4A90-A96E-4C3336B2F541}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBA70BDB-FF16-4A90-A96E-4C3336B2F541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF58F6DA-099D-4C2C-93EF-0242D15900D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF58F6DA-099D-4C2C-93EF-0242D15900D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF58F6DA-099D-4C2C-93EF-0242D15900D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF58F6DA-099D-4C2C-93EF-0242D15900D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E94D04A-E5A2-4EFD-BEFB-F6EF724DCABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E94D04A-E5A2-4EFD-BEFB-F6EF724DCABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E94D04A-E5A2-4EFD-BEFB-F6EF724DCABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E94D04A-E5A2-4EFD-BEFB-F6EF724DCABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

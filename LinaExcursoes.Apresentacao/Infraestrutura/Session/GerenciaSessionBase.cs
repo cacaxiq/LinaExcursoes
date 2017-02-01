@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace WebSite_LinaExcursao.Infraestrutura.Session
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Session
 {
     public class GerenciaSessionBase
     {

@@ -1,0 +1,40 @@
+﻿@model LinExcursoes.Apresentacao.Models.ViagensporDetalhe
+
+@section Head{
+    <meta property="fb:app_id" content="278266912518749">
+    <meta property="og:site_name" content="Lina Excursões">
+    <meta property="og:title" content="Excursão para @Model.Detalhe.Local">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://linaexcursoes.com.br/Lead/Promocoes/@Model.Detalhe.Id">
+    <meta property="og:image" content="http://linaexcursoes.com.br/@Model.Detalhe.ImagemURL">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:description" content="À partir de @Model.Detalhe.Valor">
+}
+
+<div class="container" style="margin-top: 100px;">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer jumbotron-detalhe-lead">
+        @Html.Partial("_LeadDetalhe", Model.Detalhe)
+    </header>
+
+    <hr />
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Próximas excursões para @Model.Detalhe.Tipo</h4>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Page Features -->
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row-stripped">
+                @Html.Partial("_ListaDestinos", Model.ListaViagem)
+
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</div>

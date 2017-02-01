@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using System.Web;
 using System.Web.Mvc;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
+using LinaExcursoes.Apresentacao.Infraestrutura.Validators;
 
-namespace WebSite_LinaExcursao.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     [ValidateSign]
     public class FileController : Controller

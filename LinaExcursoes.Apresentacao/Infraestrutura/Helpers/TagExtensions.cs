@@ -1,8 +1,9 @@
-﻿using System;
+﻿using LinaExcursoes.Dominio.Repositorio;
+using System;
+using System.Configuration;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto.Repositorio;
 
-namespace WebSite.Infraestrutura.Helpers
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Helpers
 {
     public class TagExtensions
     {
@@ -30,7 +31,7 @@ namespace WebSite.Infraestrutura.Helpers
 
             var parametro = repositorio.ObterPorNomeParametro(nomeParametro);
 
-            if(parametro != null)
+            if (parametro != null)
             {
                 return parametro.Conteudo;
             }
@@ -44,7 +45,7 @@ namespace WebSite.Infraestrutura.Helpers
 
             var parametro = repositorio.ObterPorNomeParametro(nomeParametro);
 
-            return new MvcHtmlString(String.Format("<img class='img-responsive' src='img/Viagens/{0}' alt='Lina Excursões - A melhor viagem para seu momento.'/>", parametro.TagHTML));
+            return new MvcHtmlString(String.Format("<img class='img-responsive' src='" + ConfigurationManager.AppSettings["caminhoImagens"] + "' alt='Lina Excursões - A melhor viagem para seu momento.'/>", parametro.TagHTML));
         }
     }
 }

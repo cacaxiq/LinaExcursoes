@@ -1,7 +1,7 @@
 ﻿using RestSharp;
 using RestSharp.Authenticators;
 
-namespace WebSite.Infraestrutura.Mail
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Mail
 {
     public class Mail
     {

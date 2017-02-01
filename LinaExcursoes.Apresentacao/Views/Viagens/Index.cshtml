@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables.Viagens>
+﻿@model IEnumerable<LinaExcursoes.Dominio.Tables.Viagens>
 
 @{
     Layout = "~/Views/Shared/Admin_Layout.cshtml";
@@ -46,15 +46,7 @@
     {
         <tr>
             <td>
-                @{
-                    var imagem = string.Empty;
-                    if (!string.IsNullOrEmpty(item.Imagem))
-                    {
-                        imagem = string.Format("<img class='img-responsive' src='img/Viagens/{0}' alt='Lina Excursões - A melhor viagem para seu momento.'/>", item.Imagem);
-                    }
-                }
-
-                @Html.Raw(imagem)
+                <img class='img-responsive' src='@item.ImagemURL' alt='Lina Excursões - A melhor viagem para seu momento.' />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Local)
@@ -81,12 +73,15 @@
                 @Html.DisplayFor(modelItem => item.DataInclusao)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
                 @Html.ActionLink("Detalhe", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
                 @Html.ActionLink("Deletar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
-                    }
+            </p>
+            <p><a class="btn btn-info" href="http://linaexcursoes.com.br/Promocoes?id=@item.Id">Lead Page</a></p>
+        </td>
+    </tr>
+    }
 
 </table>
 

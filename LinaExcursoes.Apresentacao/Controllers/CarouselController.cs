@@ -1,14 +1,13 @@
-﻿using System;
+﻿using LinaExcursoes.Dominio.Interfaces;
+using LinaExcursoes.Dominio.Tables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
-using WebSite.Infraestrutura.DataBase.Contexto.Tables;
-using WebSite.Models;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
+using LinaExcursoes.Apresentacao.Models;
+using LinaExcursoes.Apresentacao.Infraestrutura.Validators;
 
-namespace WebSite.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     [ValidateSign]
     public class CarouselController : Controller

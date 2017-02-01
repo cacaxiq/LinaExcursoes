@@ -30,7 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=3.3.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.3.2\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,8 +54,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Contexto.cs" />
+    <Compile Include="DTO\DetalheViagem.cs" />
+    <Compile Include="DTO\ViagensLeadDTO.cs" />
+    <Compile Include="Interfaces\IParametrosRepositorio.cs" />
+    <Compile Include="Interfaces\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\IUsuariosRepositorio.cs" />
+    <Compile Include="Interfaces\IViagensRepositorio.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\ParametrosRepositorio.cs" />
+    <Compile Include="Repositorio\RepositoryBase.cs" />
+    <Compile Include="Repositorio\UsuariosRepositorio.cs" />
+    <Compile Include="Repositorio\ViagensRepositorio.cs" />
+    <Compile Include="Tables\Parametros.cs" />
+    <Compile Include="Tables\TabelaBase.cs" />
+    <Compile Include="Tables\Usuarios.cs" />
+    <Compile Include="Tables\Viagens.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinaExcursoes.Infraestrutura\LinaExcursoes.Infraestrutura.csproj">
+      <Project>{26b718e4-2f1f-43d1-b07d-46ced0934a0a}</Project>
+      <Name>LinaExcursoes.Infraestrutura</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

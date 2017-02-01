@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables;
+﻿using LinaExcursoes.Dominio.Tables;
 
-namespace WebSite_LinaExcursao.Infraestrutura.Session
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Session
 {
     public class GerenciaSession : GerenciaSessionBase
     {

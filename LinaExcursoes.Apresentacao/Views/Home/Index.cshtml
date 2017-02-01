@@ -1,13 +1,18 @@
-﻿@using WebSite.Infraestrutura.Helpers;
+﻿@using LinaExcursoes.Apresentacao.Infraestrutura.Helpers;
 
 
 @{
     Layout = "~/Views/Shared/Main_Layout.cshtml";
-    
+
 }
+
+
 
 <!-- Header -->
 @{ Html.RenderAction("Montacarousel", "Carousel");}
+
+<!-- Pesquisa -->
+@{ Html.RenderPartial("_PesquisaDestinos");}
 
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
@@ -74,18 +79,44 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <p>@TagExtensions.CustomTag(3)</p>
+                <p>@TagExtensions.CustomContentPorNome("SobreNos_1")</p>
             </div>
             <div class="col-lg-4">
-                <p>@TagExtensions.CustomTag(4)</p>
-
+                <p>@TagExtensions.CustomContentPorNome("SobreNos_2")</p>
             </div>
-            <div class="col-lg-8 col-lg-offset-2 text-center">
 
-            </div>
         </div>
     </div>
 </section>
 
 <!-- Contact Section -->
 @{Html.RenderAction("Index", "Contatos"); }
+
+@section Scripts{
+    <script type="text/javascript">
+
+        var cache = {};
+        $("#pesquisar").autocomplete({
+            minLength: 2,
+            source: function (request, response) {
+                var term = request.term;
+                if (term in cache) {
+                    response(cache[term]);
+                    return;
+                }
+
+                urlParameter = '@Url.Action("AutoCompletePesquisa", "Viagens")' + "?termo=" + term;
+
+                $.getJSON(urlParameter, request, function (data, status, xhr) {
+                    cache[term] = data;
+                    response(data);
+                });
+            }
+        }).autocomplete("instance")._renderItem = function (ul, item) {
+            return $("<li>")
+              .append("<div><a href=" + item.link + " target='blank'>" + item.descricao + "</a></div>")
+              .appendTo(ul);
+        };
+
+    </script>
+    }

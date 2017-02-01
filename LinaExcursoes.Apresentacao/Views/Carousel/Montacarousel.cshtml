@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebSite.Models.CauroselViewModel>
+﻿@model IEnumerable<LinaExcursoes.Apresentacao.Models.CauroselViewModel>
 
 @{
     Layout = null;
@@ -19,10 +19,9 @@
 
         @foreach (var item in Model)
         {
-            var imagem = string.Format("<img src='img/Viagens/{0}' alt='Lina Excursões - A melhor viagem para seu momento.' class='img-responsive' />", item.Imagem);
             <div class="item active">
-                @Html.Raw(imagem)
-                <div class="carousel-caption">
+                <img src="@item.Imagem" alt='Lina Excursões - A melhor viagem para seu momento.' class='img-responsive' />
+                <div class="carousel-caption" >
                     <h3>@item.Titulo</h3>
                     <p>@item.SubTitulo</p>
                 </div>

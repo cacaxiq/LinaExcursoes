@@ -1,8 +1,8 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using WebSite_LinaExcursao.Infraestrutura.Session;
+using LinaExcursoes.Apresentacao.Infraestrutura.Session;
 
-namespace WebSite_LinaExcursao.Infraestrutura.Validators
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Validators
 {
     public class ValidateSignAttribute : AuthorizeAttribute
     {

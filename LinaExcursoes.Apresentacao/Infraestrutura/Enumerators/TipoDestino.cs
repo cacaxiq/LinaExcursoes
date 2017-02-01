@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
-namespace WebSite_LinaExcursao.Infraestrutura.Enumerators
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Enumerators
 {
     public enum TipoDestino
     {

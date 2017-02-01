@@ -20,6 +20,9 @@ namespace LinExcursoes.Apresentacao.App_Start
                 "~/Content/bootstrap.min.css",
                 "~/Content/font-awesome/css/font-awesome.min.css",
                 "~/Content/freelancer.min.css",
+                "~/Content/jquery-ui.min.css",
+                "~/Content/jquery-ui.theme.min.css",
+                "~/Content/jquery-ui.structure.min.css",
                 "~/Content/Site.css"));
 
             bundles.Add(new ScriptBundle("~/bunbles/cdnHTML5", cdnHtml5shiv));
@@ -27,6 +30,7 @@ namespace LinExcursoes.Apresentacao.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/javascript").Include(
                 "~/Scripts/jquery-3.1.1.min.js",
+                "~/Scripts/jquery-ui-1.12.1.min.js",
                 "~/Scripts/bootstrap.min.js",
                  "~/Scripts/freelancer.min.js",
                 "~/Scripts/jquery.unobtrusive-ajax.min.js"));
@@ -35,6 +39,9 @@ namespace LinExcursoes.Apresentacao.App_Start
                  "~/Scripts/GoogleAnalytics.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/cdnJqueryEasy", cdnJqueryEasy));
+
+            bundles.Add(new ScriptBundle("~/bundles/Proprios").Include(
+                "~/Scripts/Lina/*.js"));
         }
     }
 }

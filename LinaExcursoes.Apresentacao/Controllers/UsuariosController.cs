@@ -1,10 +1,10 @@
-﻿using System.Net;
+﻿using LinaExcursoes.Apresentacao.Infraestrutura.Validators;
+using LinaExcursoes.Dominio.Interfaces;
+using LinaExcursoes.Dominio.Tables;
+using System.Net;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
-using WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
 
-namespace WebSite_LinaExcursao.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     [ValidateSign]
     public class UsuariosController : Controller

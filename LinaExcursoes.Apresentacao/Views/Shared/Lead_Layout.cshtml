@@ -1,0 +1,81 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="pt-br" role="main" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="~/lina.ico" type="image/x-icon">
+    <link rel="icon" href="~/lina.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bunbles/fontsMontserrat")
+    @Styles.Render("~/bunbles/fontsLato")
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        @Scripts.Render("~/bunbles/cdnHTML5")
+        @Scripts.Render("~/bunbles/CDNrespond")
+    <![endif]-->
+    <title>Lina Excursões - O portal mineiro para viagens e excursões, com os melhores preços de Minas Gerais</title>
+    @RenderSection("Head", false)
+</head>
+<body id="page-top" class="index">
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=278266912518749";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand no-padding" href="http://linaexcursoes.com.br/Home"><img src="~/img/logo_texto.png" alt="Lina Excursões - A melhor viagem para seu momento." /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="http://linaexcursoes.com.br/Home">Lina Excursões</a>
+                    </li>
+
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="http://linaexcursoes.com.br/Praias">Praias</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="http://linaexcursoes.com.br/Cidades">Cidades</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="http://linaexcursoes.com.br/Parques">Parques</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="nav-padding" href="http://linaexcursoes.com.br/EcoTurismo">Eco Turismo</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    @RenderBody()
+
+    <!-- JavaScript -->
+    @Scripts.Render("~/bundles/javascript")
+    @Scripts.Render("~/bundles/googleAnalytics")
+    @Scripts.Render("~/bundles/cdnJqueryEasy")
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

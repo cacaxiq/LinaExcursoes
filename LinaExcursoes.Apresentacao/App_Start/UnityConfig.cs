@@ -1,10 +1,9 @@
-using System;
+using LinaExcursoes.Dominio.Interfaces;
+using LinaExcursoes.Dominio.Repositorio;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using WebSite.Infraestrutura.DataBase.Contexto.Repositorio;
-using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
+using System;
 
-namespace WebSite.App_Start
+namespace LinaExcursoes.Apresentacao.App_Start
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.

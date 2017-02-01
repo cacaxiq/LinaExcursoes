@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LinaExcursoes.Dominio.Tables.Viagens>
+
+@foreach (var item in Model)
+{
+
+    <div class="row" style="margin-bottom: 30px;">
+        <div class="col-md-7">
+            <a href="#">
+                <img class='img-responsive' src='@item.ImagemURL' alt='Lina Excursões - A melhor viagem para seu momento.' />
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3><span class="label label-default">@Html.DisplayFor(modelItem => item.Local)</span></h3>
+            <h4><span class="label label-success">@Html.DisplayFor(modelItem => item.Periodo)</span></h4>
+            <h4>@Html.DisplayFor(modelItem => item.DataSaida) a @Html.DisplayFor(modelItem => item.DataRetorno)</h4>
+
+            <p>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </p>
+            <h4>@Html.DisplayFor(modelItem => item.Valor)</h4>
+            <div class="fb-share-button fb_iframe_widget"
+                 data-href="http://linaexcursoes.com.br/Promocoes/@item.Id"
+                 data-title="Excursão para @item.Local"
+                 daa-desc="À partir de @item.Valor"
+                 data-layout="button_count"
+                 data-image="@item.ImagemURL"
+                 data-size="small"
+                 data-mobile-iframe="true"
+                 fb-xfbml-state="rendered">
+                <a class="fb-xfbml-parse-ignore"
+                   target="_blank"
+                   href="http://linaexcursoes.com.br/Promocoes/@item.Id">
+                    Compartilhar
+                </a>
+            </div>
+            <div class="fb-like" 
+                 data-href="http://linaexcursoes.com.br/Promocoes/@item.Id" 
+                 data-layout="button_count" 
+                 data-action="like" 
+                 data-size="small" 
+                 data-show-faces="true" 
+                 data-share="false">
+            </div>
+        </div>
+    </div>
+}

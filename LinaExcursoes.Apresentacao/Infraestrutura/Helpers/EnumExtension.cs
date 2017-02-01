@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 
-namespace WebSite_LinaExcursao.Infraestrutura.Helpers
+namespace LinaExcursoes.Apresentacao.Infraestrutura.Helpers
 {
     public class EnumExtension
     {

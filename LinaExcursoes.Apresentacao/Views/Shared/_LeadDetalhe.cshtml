@@ -1,0 +1,38 @@
+﻿@model LinaExcursoes.Dominio.Tables.Viagens
+<div class="row">
+    <div class="col-md-7">
+        <a href="#">
+            <img class='img-responsive no-margin' src="@Model.ImagemURL" alt='Lina Excursões - A melhor viagem para seu momento.' />
+        </a>
+    </div>
+    <div class="col-md-5">
+        <h3><span class="label label-default">@Html.DisplayFor(model => model.Local)</span></h3>
+        <h4><span class="label label-success">@Html.DisplayFor(model => model.Periodo)</span></h4>
+        <h4>@Html.DisplayFor(model => model.DataSaida) a @Html.DisplayFor(model => model.DataRetorno)</h4>
+
+        <p>
+            @Html.DisplayFor(model => model.Descricao)
+        </p>
+        <h4>@Html.DisplayFor(model => model.Valor)</h4>
+        <div class="fb-share-button fb_iframe_widget"
+             data-href="http://linaexcursoes.com.br/Promocoes/@Model.Id"
+             data-layout="button_count" 
+             data-size="small"
+             data-mobile-iframe="true"
+             fb-xfbml-state="rendered">
+            <a class="fb-xfbml-parse-ignore"
+               target="_blank"
+               href="http://linaexcursoes.com.br/Promocoes/@Model.Id" >
+                Compartilhar
+            </a>
+        </div>
+        <div class="fb-like"
+             data-href="http://linaexcursoes.com.br/Promocoes/@Model.Id"
+             data-layout="button_count"
+             data-action="like"
+             data-size="small"
+             data-show-faces="true"
+             data-share="false">
+        </div>
+    </div>
+</div>

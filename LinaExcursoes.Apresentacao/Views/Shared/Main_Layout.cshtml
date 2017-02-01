@@ -20,8 +20,11 @@
         @Scripts.Render("~/bunbles/cdnHTML5")
         @Scripts.Render("~/bunbles/CDNrespond")
     <![endif]-->
+    @RenderSection("Head", false)
 </head>
 <body id="page-top" class="index">
+
+    <div id="fb-root"></div>
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -36,11 +39,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    @if (!(ViewBag.Home??false))
+                    @if (!(ViewBag.Home ?? false))
                     {
-                    <li class="page-scroll">
-                        <a class="nav-padding" href="~/Home">Ínicio</a>
-                    </li>
+                        <li class="page-scroll">
+                            <a class="nav-padding" href="~/Home">Ínicio</a>
+                        </li>
                     }
 
                     <li class="page-scroll">
@@ -56,14 +59,14 @@
                         <a class="nav-padding" href="~/EcoTurismo">Eco Turismo</a>
                     </li>
 
-                    @if (ViewBag.Home??false)
+                    @if (ViewBag.Home ?? false)
                     {
-                    <li class="page-scroll">
-                        <a class="nav-padding" href="#about">Sobre Nós</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a class="nav-padding" href="#contact">Contato</a>
-                    </li>
+                        <li class="page-scroll">
+                            <a class="nav-padding" href="#about">Sobre Nós</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a class="nav-padding" href="#contact">Contato</a>
+                        </li>
                     }
                 </ul>
             </div>
@@ -108,9 +111,9 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h4>SobrE a guia</h4>
+                        <h4></h4>
                         <p>contato@linaexcursoes.com.br</p>
-                        <p>No portal Lina Excursões encontre uma oportunidade de encontrar a melhor viagem para seu momento.</p>
+                        <p>No portal Lina Excursões você tem diversos destinos, a sua oportunidade de encontrar a melhor viagem para o seu momento.</p>
                     </div>
                 </div>
             </div>
@@ -141,6 +144,14 @@
     @RenderSection("Scripts", required: false)
 
     <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=278266912518749";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
         $(function () {
             var element = $(".item.active");
             var controle = 0;
@@ -150,6 +161,36 @@
                 }
                 controle++;
             });
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: 278266912518749,
+                    status: true,
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v2.8'
+                });
+            };
+
+            function postToFeed(title, desc, url, image) {
+                var obj = { method: 'feed', link: url, picture: image, name: title, description: desc };
+                function callback(response) { }
+                FB.ui(obj, callback);
+            }
+
+            function fbShareBtnFn(event) {
+                event.preventDefault();
+                var title = this.getAttribute('data-title'),
+                    desc = this.getAttribute('data-desc'),
+                    url = this.getAttribute('href'),
+                    image = this.getAttribute('data-image');
+                postToFeed(title, desc, url, image);
+                // retirei o 'return false;' e coloquei o 'event.stopImmediatePropagation();'
+                event.stopImmediatePropagation();
+            };
+            var fbShareBtns = document.querySelectorAll('.fb-share-button');
+            for (var i = 0; i < fbShareBtns.length; i++) {
+                fbShareBtns[i].addEventListener('click', fbShareBtnFn);
+            };
         });
     </script>
 </body>

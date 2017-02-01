@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
-using WebSite.Infraestrutura.DataBase.Contexto.Tables;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
+using LinaExcursoes.Apresentacao.Infraestrutura.Validators;
+using LinaExcursoes.Dominio.Interfaces;
+using LinaExcursoes.Dominio.Tables;
 
-namespace WebSite.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     [ValidateSign]
     public class ParametrosController : Controller
@@ -109,8 +109,7 @@ namespace WebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Parametros parametros = parametro.GetById(id);
-            parametro.Remove(parametros);
+            parametro.Remove(id);
             return RedirectToAction("Index");
         }
     }

@@ -1,0 +1,23 @@
+﻿
+<section id="pesquisa" class="pesquisa">
+
+    <div class="row">
+        @using (Html.BeginForm("DetalhesPesquisa", "Viagens"))
+        {
+            <div class="col-sm-3 col-sm-offset-1">
+                <label>Encontre sua excursão:</label>
+            </div>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="pesquisar" name="pesquisar" placeholder="Insira um destino ou mês...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default icone-pesquisa" type="submit">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>

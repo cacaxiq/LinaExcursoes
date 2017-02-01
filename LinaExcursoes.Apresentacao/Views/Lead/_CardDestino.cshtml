@@ -1,0 +1,22 @@
+﻿@model IEnumerable<LinaExcursoes.Dominio.Tables.Viagens>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img class='img-responsive no-margin' src="@item.ImagemURL" alt='Lina Excursões - A melhor viagem para seu momento.' />
+            <div class="caption">
+                <h3 class="card-titulo">@item.Local</h3>
+                <p>@item.Valor</p>
+                <p>
+                    <a href="~/Detalhe?tipoDestino=@item.Tipo&id=@item.Id" class="btn btn-primary card-botao">Mais infomações</a>
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+

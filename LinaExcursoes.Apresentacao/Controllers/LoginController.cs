@@ -1,9 +1,9 @@
-﻿using System.Web.Mvc;
-using WebSite.Infraestrutura.DataBase.Contexto.Interfaces;
-using WebSite_LinaExcursao.Infraestrutura.DataBase.Contexto.Tables;
-using WebSite_LinaExcursao.Infraestrutura.Session;
+﻿using LinaExcursoes.Apresentacao.Infraestrutura.Session;
+using LinaExcursoes.Dominio.Interfaces;
+using LinaExcursoes.Dominio.Tables;
+using System.Web.Mvc;
 
-namespace WebSite.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     public class LoginController : Controller
     {

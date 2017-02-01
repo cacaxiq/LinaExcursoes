@@ -42,3 +42,64 @@ div.row-stripped > div:nth-of-type(odd) {
 .nav-padding {
     padding: 15px 15px 0 15px !important;
 }
+
+
+.jumbotron-detalhe-lead {
+    padding: 0 15px 0 0 !important;
+    text-align: justify;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.card-titulo {
+    height: 65px;
+    background-color: beige;
+    padding-top: 7px;
+}
+
+.card-botao {
+    border: none;
+    border-radius: 0;
+    background-color: #2c9d9f;
+}
+
+    .card-botao:hover {
+        background-color: #FBAF3F;
+    }
+
+.icone-pesquisa {
+    color: #2c9d9f;
+    padding: 4px 7px 0px 6px !important;
+    font-size: 20px;
+    margin: 0 !important;
+}
+
+.icone-pesquisa:hover {
+    color: #FBAF3F;
+}
+
+.pesquisa {
+    background-color: #FBAF3F;
+    color: white;
+    font-size: 14px;
+    padding: 10px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+    .pesquisa label {
+        float: right;
+        padding-top: 8px;
+    }
+
+    .pesquisa input {
+        color: #211f1f;
+        width: 100%;
+        float: left;
+    }

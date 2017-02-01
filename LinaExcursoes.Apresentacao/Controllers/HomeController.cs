@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using WebSite_LinaExcursao.Infraestrutura.Validators;
+using LinaExcursoes.Apresentacao.Infraestrutura.Validators;
 
-namespace WebSite.Controllers
+namespace LinaExcursoes.Apresentacao.Controllers
 {
     public class HomeController : Controller
     {
