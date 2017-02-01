@@ -7,9 +7,20 @@
                 <h2>Resultado da pesquisa para <span class="label label-default">@ViewBag.Termo</span></h2>
                 <hr class="star-primary">
             </div>
-            <div class="row-stripped">
-                @Html.Partial("_ListaDestinos", Model)
-            </div>
+            @if (Model.Any())
+            {
+                <div class="row-stripped">
+                    @Html.Partial("_ListaDestinos", Model)
+                </div>
+            }
+            else
+            {
+                <div class="row-stripped" style="padding-bottom:20px;">
+                    <h3>Nenhum destino para a busca <span class="label label-default">@ViewBag.Termo</span></h3>
+                    @Html.ActionLink("Voltar", "Index", "Home", null, new { @class = "btn btn-lg btn-default" })
+                </div>
+            }
+
         </div>
     </div>
 </div>
