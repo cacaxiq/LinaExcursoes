@@ -62,7 +62,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    List<Parametros> parametrosList = GerarParametrosParaCaurosel(caurosel);
+                    List<Parametro> parametrosList = GerarParametrosParaCaurosel(caurosel);
 
                     parametro.AddList(parametrosList);
                 }
@@ -92,7 +92,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    IEnumerable<Parametros> parametrosList = AtualizaParametrosPorCaurosel(caurosel.NomeCarousel, caurosel);
+                    IEnumerable<Parametro> parametrosList = AtualizaParametrosPorCaurosel(caurosel.NomeCarousel, caurosel);
 
                     parametro.UpdateList(parametrosList);
 
@@ -120,7 +120,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string nomeCaurosel)
         {
-            IEnumerable<Parametros> parametrosList = parametro.FindBy(p => p.TagHTML == nomeCaurosel);
+            IEnumerable<Parametro> parametrosList = parametro.FindBy(p => p.TagHTML == nomeCaurosel);
 
             parametro.RemoveList(parametrosList);
 
@@ -167,17 +167,17 @@ namespace LinaExcursoes.Apresentacao.Controllers
 
                 foreach (var item in parametros.Value)
                 {
-                    if (item.NomeParametro.Contains("_imagem"))
+                    if (item.Nome.Contains("_imagem"))
                     {
                         carousel.Imagem = item.Conteudo;
                     }
 
-                    if (item.NomeParametro.Contains("_titulo"))
+                    if (item.Nome.Contains("_titulo"))
                     {
                         carousel.Titulo = item.Conteudo;
                     }
 
-                    if (item.NomeParametro.Contains("_subTitulo"))
+                    if (item.Nome.Contains("_subTitulo"))
                     {
                         carousel.SubTitulo = item.Conteudo;
                     }
@@ -189,30 +189,30 @@ namespace LinaExcursoes.Apresentacao.Controllers
             return model;
         }
 
-        private static List<Parametros> GerarParametrosParaCaurosel(CauroselViewModel caurosel)
+        private static List<Parametro> GerarParametrosParaCaurosel(CauroselViewModel caurosel)
         {
-            var parametro_imagem = new Parametros
+            var parametro_imagem = new Parametro
             {
-                NomeParametro = string.Format("{0}_imagem", caurosel.NomeCarousel),
+                Nome = string.Format("{0}_imagem", caurosel.NomeCarousel),
                 Conteudo = caurosel.Imagem,
                 TagHTML = caurosel.NomeCarousel
             };
 
-            var parametro_titulo = new Parametros
+            var parametro_titulo = new Parametro
             {
-                NomeParametro = string.Format("{0}_titulo", caurosel.NomeCarousel),
+                Nome = string.Format("{0}_titulo", caurosel.NomeCarousel),
                 Conteudo = caurosel.Titulo,
                 TagHTML = caurosel.NomeCarousel
             };
 
-            var parametro_subTitulo = new Parametros
+            var parametro_subTitulo = new Parametro
             {
-                NomeParametro = string.Format("{0}_subTitulo", caurosel.NomeCarousel),
+                Nome = string.Format("{0}_subTitulo", caurosel.NomeCarousel),
                 Conteudo = caurosel.SubTitulo,
                 TagHTML = caurosel.NomeCarousel
             };
 
-            var parametrosList = new List<Parametros>
+            var parametrosList = new List<Parametro>
                     {
                         parametro_imagem,
                         parametro_titulo,
@@ -228,14 +228,14 @@ namespace LinaExcursoes.Apresentacao.Controllers
             var caurosel = new CauroselViewModel
             {
                 NomeCarousel = nomeCaurosel,
-                Imagem = parametros.First(p => p.NomeParametro == string.Format("{0}_imagem", nomeCaurosel)).Conteudo,
-                Titulo = parametros.First(p => p.NomeParametro == string.Format("{0}_titulo", nomeCaurosel)).Conteudo,
-                SubTitulo = parametros.First(p => p.NomeParametro == string.Format("{0}_subTitulo", nomeCaurosel)).Conteudo
+                Imagem = parametros.First(p => p.Nome == string.Format("{0}_imagem", nomeCaurosel)).Conteudo,
+                Titulo = parametros.First(p => p.Nome == string.Format("{0}_titulo", nomeCaurosel)).Conteudo,
+                SubTitulo = parametros.First(p => p.Nome == string.Format("{0}_subTitulo", nomeCaurosel)).Conteudo
             };
             return caurosel;
         }
 
-        private IEnumerable<Parametros> AtualizaParametrosPorCaurosel(string nomeCaurosel, CauroselViewModel caurosel)
+        private IEnumerable<Parametro> AtualizaParametrosPorCaurosel(string nomeCaurosel, CauroselViewModel caurosel)
         {
             var parametrosList = parametro.FindBy(p => p.TagHTML == nomeCaurosel);
 
@@ -243,17 +243,17 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 item.TagHTML = caurosel.NomeCarousel;
 
-                if (item.NomeParametro.Contains("_imagem"))
+                if (item.Nome.Contains("_imagem"))
                 {
                     item.Conteudo = caurosel.Imagem;
                 }
 
-                if (item.NomeParametro.Contains("_titulo"))
+                if (item.Nome.Contains("_titulo"))
                 {
                     item.Conteudo = caurosel.Titulo;
                 }
 
-                if (item.NomeParametro.Contains("_subTitulo"))
+                if (item.Nome.Contains("_subTitulo"))
                 {
                     item.Conteudo = caurosel.SubTitulo;
                 }

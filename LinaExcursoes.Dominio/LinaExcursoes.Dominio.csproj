@@ -63,14 +63,17 @@
     <Compile Include="Interfaces\IViagensRepositorio.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorio\ParametrosRepositorio.cs" />
+    <Compile Include="Repositorio\ParametroRepositorio.cs" />
     <Compile Include="Repositorio\RepositoryBase.cs" />
-    <Compile Include="Repositorio\UsuariosRepositorio.cs" />
-    <Compile Include="Repositorio\ViagensRepositorio.cs" />
-    <Compile Include="Tables\Parametros.cs" />
+    <Compile Include="Repositorio\UsuarioRepositorio.cs" />
+    <Compile Include="Repositorio\ViagemRepositorio.cs" />
+    <Compile Include="Tables\Carousel.cs" />
+    <Compile Include="Tables\Imagem.cs" />
+    <Compile Include="Tables\Parametro.cs" />
     <Compile Include="Tables\TabelaBase.cs" />
-    <Compile Include="Tables\Usuarios.cs" />
-    <Compile Include="Tables\Viagens.cs" />
+    <Compile Include="Tables\TipoUsuario.cs" />
+    <Compile Include="Tables\Usuario.cs" />
+    <Compile Include="Tables\Viagem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

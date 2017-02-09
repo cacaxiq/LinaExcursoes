@@ -29,7 +29,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Parametros parametros = parametro.GetById(id.Value);
+            Parametro parametros = parametro.GetById(id.Value);
             if (parametros == null)
             {
                 return HttpNotFound();
@@ -48,7 +48,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Conteudo,TagHTML,NomeParametro")] Parametros parametros)
+        public ActionResult Create([Bind(Include = "Id,Conteudo,TagHTML,NomeParametro")] Parametro parametros)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Parametros parametros = parametro.GetById(id.Value);
+            Parametro parametros = parametro.GetById(id.Value);
             if (parametros == null)
             {
                 return HttpNotFound();
@@ -79,7 +79,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Conteudo,TagHTML,NomeParametro")] Parametros parametros)
+        public ActionResult Edit([Bind(Include = "Id,Conteudo,TagHTML,NomeParametro")] Parametro parametros)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Parametros parametros = parametro.GetById(id.Value);
+            Parametro parametros = parametro.GetById(id.Value);
             if (parametros == null)
             {
                 return HttpNotFound();

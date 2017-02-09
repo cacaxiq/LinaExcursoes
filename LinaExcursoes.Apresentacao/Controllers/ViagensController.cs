@@ -94,7 +94,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Viagens viagens = viagem.GetById(id.Value);
+            Viagem viagens = viagem.GetById(id.Value);
             if (viagens == null)
             {
                 return HttpNotFound();
@@ -116,7 +116,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Local,Periodo,Valor,Tipo,Descricao,DataSaida,DataRetorno,Imagem")] Viagens viagens)
+        public ActionResult Create([Bind(Include = "Id,Local,Periodo,Valor,Tipo,Descricao,DataSaida,DataRetorno,Imagem")] Viagem viagens)
         {
             if (ModelState.IsValid)
             {
@@ -134,7 +134,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Viagens viagens = viagem.GetById(id.Value);
+            Viagem viagens = viagem.GetById(id.Value);
             if (viagens == null)
             {
                 return HttpNotFound();
@@ -147,7 +147,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Local,Periodo,Valor,Tipo,Descricao,DataSaida,DataRetorno,Imagem")] Viagens viagens)
+        public ActionResult Edit([Bind(Include = "Id,Local,Periodo,Valor,Tipo,Descricao,DataSaida,DataRetorno,Imagem")] Viagem viagens)
         {
             if (ModelState.IsValid)
             {
@@ -164,7 +164,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Viagens viagens = viagem.GetById(id.Value);
+            Viagem viagens = viagem.GetById(id.Value);
             if (viagens == null)
             {
                 return HttpNotFound();

@@ -50,6 +50,12 @@ namespace LinaExcursoes.Apresentacao.App_Start
             );
 
             routes.MapRoute(
+                name: "DetalheLead",
+                url: "Detalhe/{tipoDestino}/{id}",
+                defaults: new { controller = "Viagens", action = "Detalhe", tipoDestino= "tipoDestino", id = "id" }
+            );
+
+            routes.MapRoute(
                 name: "LeadPage",
                 url: "Promocoes/{id}",
                 defaults: new { controller = "Lead", action = "Promocoes", id = "id" }

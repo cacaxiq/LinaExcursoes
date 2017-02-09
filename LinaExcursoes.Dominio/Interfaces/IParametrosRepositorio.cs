@@ -2,8 +2,8 @@
 
 namespace LinaExcursoes.Dominio.Interfaces
 {
-    public interface IParametrosRepositorio : IRepositoryBase<Parametros>
+    public interface IParametrosRepositorio : IRepositoryBase<Parametro>
     {
-        Parametros ObterPorNomeParametro(string nomeParametro);
+        Parametro ObterPorNomeParametro(string nomeParametro);
     }
 }

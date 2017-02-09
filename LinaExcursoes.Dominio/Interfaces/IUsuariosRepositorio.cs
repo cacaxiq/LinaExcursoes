@@ -2,10 +2,10 @@
 
 namespace LinaExcursoes.Dominio.Interfaces
 {
-    public interface IUsuariosRepositorio : IRepositoryBase<Usuarios>
+    public interface IUsuariosRepositorio : IRepositoryBase<Usuario>
     {
-        bool ValidarLoginUnico(Usuarios usuario);
+        bool ValidarLoginUnico(Usuario usuario);
 
-        bool ValidarLogin(Usuarios usuario);
+        bool ValidarLogin(Usuario usuario);
     }
 }

@@ -17,12 +17,12 @@ namespace LinaExcursoes.Apresentacao.Controllers
         [HttpGet]
         public ActionResult CriarLogin()
         {
-            var model = new Usuarios();
+            var model = new Usuario();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult CriarLogin(Usuarios usuarios)
+        public ActionResult CriarLogin(Usuario usuarios)
         {
             if (ModelState.IsValid)
             {
@@ -57,12 +57,12 @@ namespace LinaExcursoes.Apresentacao.Controllers
 
         public ActionResult Logar()
         {
-            var model = new Usuarios();
+            var model = new Usuario();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Logar(Usuarios usuarios)
+        public ActionResult Logar(Usuario usuarios)
         {
             ModelState["Nome"].Errors.Clear();
             ModelState["ContraSenha"].Errors.Clear();

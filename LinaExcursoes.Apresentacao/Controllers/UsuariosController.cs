@@ -29,7 +29,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuarios usuarios = usuario.GetById(id.Value);
+            Usuario usuarios = usuario.GetById(id.Value);
             if (usuarios == null)
             {
                 return HttpNotFound();
@@ -48,7 +48,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Login,Senha,DataInclusao")] Usuarios usuarios)
+        public ActionResult Create([Bind(Include = "Id,Nome,Login,Senha,DataInclusao")] Usuario usuarios)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuarios usuarios = usuario.GetById(id.Value);
+            Usuario usuarios = usuario.GetById(id.Value);
             if (usuarios == null)
             {
                 return HttpNotFound();
@@ -79,7 +79,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Login,Senha,DataInclusao")] Usuarios usuarios)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Login,Senha,DataInclusao")] Usuario usuarios)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuarios usuarios = usuario.GetById(id.Value);
+            Usuario usuarios = usuario.GetById(id.Value);
             if (usuarios == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace LinaExcursoes.Apresentacao.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Usuarios usuarios = usuario.GetById(id);
+            Usuario usuarios = usuario.GetById(id);
             usuario.Remove(usuarios);
             return RedirectToAction("Index");
         }

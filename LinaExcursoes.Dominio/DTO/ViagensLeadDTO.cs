@@ -4,8 +4,8 @@ namespace LinaExcursoes.Dominio.DTO
 {
     public class ViagensLeadDTO
     {
-        public Viagens ViagemPrincipal { get; set; }
-        public IEnumerable<Viagens> ListaViagem { get; set; }
-        public IEnumerable<Viagens> ListaCadatipo { get; set; }
+        public Viagem ViagemPrincipal { get; set; }
+        public IEnumerable<Viagem> ListaViagem { get; set; }
+        public IEnumerable<Viagem> ListaCadatipo { get; set; }
     }
 }

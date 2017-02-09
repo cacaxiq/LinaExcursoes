@@ -9,7 +9,7 @@ namespace LinaExcursoes.Apresentacao.Infraestrutura.Helpers
     {
         public static MvcHtmlString CustomTag(int id)
         {
-            var repositorio = new ParametrosRepositorio();
+            var repositorio = new ParametroRepositorio();
 
             var parametro = repositorio.GetById(id);
 
@@ -18,7 +18,7 @@ namespace LinaExcursoes.Apresentacao.Infraestrutura.Helpers
 
         public static string CustomContent(int id)
         {
-            var repositorio = new ParametrosRepositorio();
+            var repositorio = new ParametroRepositorio();
 
             var parametro = repositorio.GetById(id);
 
@@ -27,7 +27,7 @@ namespace LinaExcursoes.Apresentacao.Infraestrutura.Helpers
 
         public static string CustomContentPorNome(string nomeParametro)
         {
-            var repositorio = new ParametrosRepositorio();
+            var repositorio = new ParametroRepositorio();
 
             var parametro = repositorio.ObterPorNomeParametro(nomeParametro);
 
@@ -41,7 +41,7 @@ namespace LinaExcursoes.Apresentacao.Infraestrutura.Helpers
 
         public static MvcHtmlString CustomImgTag(string nomeParametro)
         {
-            var repositorio = new ParametrosRepositorio();
+            var repositorio = new ParametroRepositorio();
 
             var parametro = repositorio.ObterPorNomeParametro(nomeParametro);
 

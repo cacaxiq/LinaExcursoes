@@ -7,9 +7,17 @@ namespace LinaExcursoes.Dominio.Tables
     {
         [Key]
         public long Id { get; set; }
-        
-        [ScaffoldColumn(false)]
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+
+        [MaxLength(50, ErrorMessage = "Excedeu tamanho permitido(50).")]
+        public string Nome { get; set; }
+
+        [MaxLength(400, ErrorMessage = "Excedeu tamanho permitido(400).")]
+        public string Descricao { get; set; }
+
         public DateTime DataInclusao { get; set; }
+
+        public DateTime DataAlteracao { get; set; }
+
+        public bool Ativo { get; set; }
     }
 }

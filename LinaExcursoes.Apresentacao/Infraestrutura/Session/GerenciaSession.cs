@@ -6,11 +6,11 @@ namespace LinaExcursoes.Apresentacao.Infraestrutura.Session
     {
         private const string usuario = "Usuario";
 
-        public static Usuarios Usuario
+        public static Usuario Usuario
         {
             get
             {
-                return LeComDefault<Usuarios>(usuario);
+                return LeComDefault<Usuario>(usuario);
             }
             set
             {

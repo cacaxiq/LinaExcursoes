@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 
 namespace LinaExcursoes.Dominio.Interfaces
 {
-    public interface IViagensRepositorio : IRepositoryBase<Viagens>
+    public interface IViagensRepositorio : IRepositoryBase<Viagem>
     {
-        IEnumerable<Viagens> ObterProximasViagens();
+        IEnumerable<Viagem> ObterProximasViagens();
 
-        IEnumerable<Viagens> ObterProximasViagensPraias();
+        IEnumerable<Viagem> ObterProximasViagensPraias();
 
-        IEnumerable<Viagens> ObterProximasViagensCidades();
+        IEnumerable<Viagem> ObterProximasViagensCidades();
 
-        IEnumerable<Viagens> ObterProximasViagensParques();
+        IEnumerable<Viagem> ObterProximasViagensParques();
 
-        IEnumerable<Viagens> ObterProximasViagensEcoturismo();
+        IEnumerable<Viagem> ObterProximasViagensEcoturismo();
 
         ViagensLeadDTO ObterViagensLead(int id);
 
@@ -23,6 +23,6 @@ namespace LinaExcursoes.Dominio.Interfaces
 
         DetalheViagem ObterDetalheViagem(int id);
 
-        IEnumerable<Viagens> ObterViagensPorPesquisa(string termo);
+        IEnumerable<Viagem> ObterViagensPorPesquisa(string termo);
     }
 }

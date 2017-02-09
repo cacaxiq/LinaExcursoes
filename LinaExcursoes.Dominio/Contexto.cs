@@ -10,11 +10,17 @@ namespace LinaExcursoes.Dominio
             Database.SetInitializer<Contexto>(null);
         }
 
-        public DbSet<Parametros> Parametros { get; set; }
+        public DbSet<Parametro> Parametro { get; set; }
 
-        public DbSet<Viagens> Viagens { get; set; }
+        public DbSet<Viagem> Viagem { get; set; }
 
-        public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+
+        public DbSet<Carousel> Carousel { get; set; }
+
+        public DbSet<Imagem> Imagem { get; set; }
+
+        public DbSet<TipoUsuario> TipoUsuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

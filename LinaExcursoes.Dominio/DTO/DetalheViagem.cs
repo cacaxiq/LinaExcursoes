@@ -5,7 +5,7 @@ namespace LinaExcursoes.Dominio.DTO
 {
     public class DetalheViagem
     {
-        public Viagens Detalhe { get; set; }
-        public IEnumerable<Viagens> ListaViagem { get; set; }
+        public Viagem Detalhe { get; set; }
+        public IEnumerable<Viagem> ListaViagem { get; set; }
     }
 }

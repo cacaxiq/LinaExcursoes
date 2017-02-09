@@ -5,7 +5,7 @@ namespace LinExcursoes.Apresentacao.Models
 {
     public class ViagensporDetalhe
     {
-        public Viagens Detalhe { get; set; }
-        public IEnumerable<Viagens> ListaViagem { get; set; }
+        public Viagem Detalhe { get; set; }
+        public IEnumerable<Viagem> ListaViagem { get; set; }
     }
 }

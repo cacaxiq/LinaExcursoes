@@ -38,9 +38,9 @@ namespace LinaExcursoes.Apresentacao.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IParametrosRepositorio, ParametrosRepositorio>();
-            container.RegisterType<IViagensRepositorio, ViagensRepositorio>();
-            container.RegisterType<IUsuariosRepositorio, UsuariosRepositorio>();
+            container.RegisterType<IParametrosRepositorio, ParametroRepositorio>();
+            container.RegisterType<IViagensRepositorio, ViagemRepositorio>();
+            container.RegisterType<IUsuariosRepositorio, UsuarioRepositorio>();
         }
     }
 }
