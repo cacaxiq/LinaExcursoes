@@ -29,8 +29,8 @@ namespace LinExcursoes.Apresentacao.App_Start
             bundles.Add(new ScriptBundle("~/bunbles/CDNrespond", cdnRespond));
 
             bundles.Add(new ScriptBundle("~/bundles/javascript").Include(
-                "~/Scripts/jquery-3.1.1.min.js",
-                "~/Scripts/jquery-ui-1.12.1.min.js",
+                "~/Scripts/jquery-{version}.min.js",
+                "~/Scripts/jquery-ui-{version}.min.js",
                 "~/Scripts/bootstrap.min.js",
                  "~/Scripts/freelancer.min.js",
                 "~/Scripts/jquery.unobtrusive-ajax.min.js"));

@@ -78,7 +78,7 @@
                 @Html.ActionLink("Detalhe", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
                 @Html.ActionLink("Deletar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
             </p>
-            <p><a class="btn btn-info" href="http://linaexcursoes.com.br/Promocoes?id=@item.Id">Lead Page</a></p>
+            <p><a class="btn btn-info" target="_blank" href="http://linaexcursoes.com.br/Promocoes/@item.Id">Lead Page</a></p>
         </td>
     </tr>
     }
